@@ -2,6 +2,6 @@ package com.kotrkv.repositories;
 
 import java.util.List;
 
-public interface UsersRepository<T> {
+public interface Repository<T> {
     List<T> findAll();
 }

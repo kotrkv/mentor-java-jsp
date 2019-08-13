@@ -5,7 +5,7 @@ import com.kotrkv.model.User;
 import java.time.LocalDate;
 import java.util.List;
 
-public class UsersRepositoryInMemory implements UsersRepository<User> {
+public class UsersRepositoryInMemory implements Repository<User> {
 
     private List<User> users;
 
