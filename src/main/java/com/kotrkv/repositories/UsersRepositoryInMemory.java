@@ -5,7 +5,7 @@ import com.kotrkv.model.User;
 import java.time.LocalDate;
 import java.util.List;
 
-public class UsersRepositoryInMemory {
+public class UsersRepositoryInMemory implements UsersRepository<User> {
 
     private List<User> users;
 
@@ -14,7 +14,7 @@ public class UsersRepositoryInMemory {
         users.add(new User("Two", "passtwo", LocalDate.parse("1995-05-05")));
     }
 
-    public List<User> getAll() {
+    public List<User> findAll() {
         return users;
     }
 }
