@@ -1,4 +1,7 @@
 package com.kotrkv.repositories;
 
-public interface UsersRepository {
+import java.util.List;
+
+public interface UsersRepository<T> {
+    List<T> findAll();
 }
