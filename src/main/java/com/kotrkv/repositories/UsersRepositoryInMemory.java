@@ -3,11 +3,12 @@ package com.kotrkv.repositories;
 import com.kotrkv.model.User;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UsersRepositoryInMemory implements Repository<User> {
 
-    private List<User> users;
+    private List<User> users = new ArrayList<>();
 
     public UsersRepositoryInMemory() {
         users.add(new User("One", "passone", LocalDate.parse("1994-01-01")));
