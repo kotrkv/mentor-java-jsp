@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet("/sign")
-public class SingUpServlet extends HttpServlet {
+public class SignUpServlet extends HttpServlet {
 
     private Repository<User> userRepository;
 
