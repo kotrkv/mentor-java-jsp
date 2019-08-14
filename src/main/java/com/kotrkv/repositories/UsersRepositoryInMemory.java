@@ -18,4 +18,9 @@ public class UsersRepositoryInMemory implements Repository<User> {
     public List<User> findAll() {
         return users;
     }
+
+    @Override
+    public void create(User user) {
+        users.add(user);
+    }
 }
