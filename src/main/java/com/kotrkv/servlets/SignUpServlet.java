@@ -29,12 +29,7 @@ public class SignUpServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         List<User> users = userRepository.findAll();
-
-        PrintWriter writer = resp.getWriter();
-        writer.write("<h1>Hello from SingUpServlet</h1>");
-
-        for (User user : users) {
-            writer.write("<h2>" + user.getName() + " - " + user.getPassword() + "</h2></br>");
-        }
+        req.setAttribute("users", users);
+        req.getRequestDispatcher("/signUp.jsp").forward(req, resp);
     }
 }
