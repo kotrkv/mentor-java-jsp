@@ -4,22 +4,25 @@
 <html>
 	<head>
 		<title>Simple JSP Application</title>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css" type="text/css"/>
 	</head>
 	<body>
 		<h1>Hello world!</h1>
-		<table>
-            <tr>
-                <th>User name</th>
-                <th>User password</th>
-                <th>User birthday</th>
-            </tr>
-            <c:forEach var="user" items="${users}">
-                <tr>
-                    <td>${user.name}</td>
-                    <td>${user.password}</td>
-                    <td>${user.birthday}</td>
-                </tr>
-            </c:forEach>
-        </table>
+		<form action="/sign" method="post" class="form-style-9">
+		<ul>
+		    <li>
+		        <input type = "text" name = "name" placeholder = "Input name..." class="field-style field-full align-none"/>
+		    </li>
+		    <li>
+		        <input type = "password" name = "password" placeholder = "Input password..." class="field-style field-full align-none"/>
+		    </li>
+		    <li>
+		        <input type = "birthday" name = "birthday" placeholder = "Input birthday..." class="field-style field-full align-none"/>
+		    </li>
+		    <li>
+		        <input type = "submit"/>
+		    </li>
+		</ul>
+		</form>
 	</body>
 </html>

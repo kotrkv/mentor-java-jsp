@@ -11,11 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.LocalDate;
+import java.util.List;
 
-@WebServlet("/sign")
-public class SignUpServlet extends HttpServlet {
-
+@WebServlet("/users")
+public class ShowUsersServlet extends HttpServlet {
     private Repository<User> userRepository;
 
     @Override
@@ -26,18 +25,8 @@ public class SignUpServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-//        List<User> users = userRepository.findAll();
-//        req.setAttribute("users", users);
-        req.getRequestDispatcher("/signUp.jsp").forward(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name = req.getParameter("name");
-        String password = req.getParameter("password");
-        LocalDate birthday = LocalDate.parse(req.getParameter("birthday"));
-        userRepository.create(new User(name, password, birthday));
-        doGet(req, resp);
+        List<User> users = userRepository.findAll();
+        req.setAttribute("users", users);
+        req.getRequestDispatcher("/users.jsp").forward(req, resp);
     }
 }
