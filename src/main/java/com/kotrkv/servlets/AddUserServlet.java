@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 @WebServlet("/sign")
-public class SignUpServlet extends HttpServlet {
+public class AddUserServlet extends HttpServlet {
 
     private Repository<User> userRepository;
 
@@ -29,7 +29,7 @@ public class SignUpServlet extends HttpServlet {
 
 //        List<User> users = userRepository.findAll();
 //        req.setAttribute("users", users);
-        req.getRequestDispatcher("/signUp.jsp").forward(req, resp);
+        req.getRequestDispatcher("/views/addUser.jsp").forward(req, resp);
     }
 
     @Override
@@ -38,6 +38,8 @@ public class SignUpServlet extends HttpServlet {
         String password = req.getParameter("password");
         LocalDate birthday = LocalDate.parse(req.getParameter("birthday"));
         userRepository.create(new User(name, password, birthday));
-        doGet(req, resp);
+        //doGet(req, resp);
+//        getServletContext().getRequestDispatcher("/listUsers.jsp"). forward(req, resp);
+        resp.sendRedirect("/users");
     }
 }

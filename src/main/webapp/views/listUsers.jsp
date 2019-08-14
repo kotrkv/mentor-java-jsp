@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Simple JSP Application</title>
+		<title>All users</title>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css" type="text/css"/>
 	</head>
 	<body>
-		<h3>Users</h3>
+		<h3>Users...</h3>
 		<table>
             <tr>
                 <th>User name</th>
@@ -21,7 +21,7 @@
                     <td>${user.name}</td>
                     <td>${user.password}</td>
                     <td>${user.birthday}</td>
-                    <td><a href="">Edit</a></td>
+                    <td><a href="/delete?name="+${user.name}>Edit</a></td>
                     <td><a href="">Remove</a></td>
                 </tr>
             </c:forEach>

@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet("/users")
-public class ShowUsersServlet extends HttpServlet {
+public class UsersServlet extends HttpServlet {
     private Repository<User> userRepository;
 
     @Override
@@ -27,6 +27,6 @@ public class ShowUsersServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<User> users = userRepository.findAll();
         req.setAttribute("users", users);
-        req.getRequestDispatcher("/users.jsp").forward(req, resp);
+        req.getRequestDispatcher("/views/listUsers.jsp").forward(req, resp);
     }
 }

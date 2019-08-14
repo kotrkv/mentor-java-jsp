@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Simple JSP Application</title>
+		<title>Add new user</title>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css" type="text/css"/>
 	</head>
 	<body>
-		<h1>Hello world!</h1>
+		<h3>Add new user...</h3>
 		<form action="/sign" method="post" class="form-style-9">
 		<ul>
 		    <li>
