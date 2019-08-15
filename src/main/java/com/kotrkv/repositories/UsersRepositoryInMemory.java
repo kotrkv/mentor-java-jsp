@@ -22,4 +22,9 @@ public class UsersRepositoryInMemory implements Repository<User> {
     public void create(User user) {
         FakeRepository.getInstance().getUsers().add(user);
     }
+
+    @Override
+    public void delete(User user) {
+        FakeRepository.getInstance().getUsers().remove(user);
+    }
 }

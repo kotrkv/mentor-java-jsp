@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
 
-@WebServlet("/sign")
+@WebServlet("/addUser")
 public class AddUserServlet extends HttpServlet {
 
     private Repository<User> userRepository;
@@ -29,7 +29,7 @@ public class AddUserServlet extends HttpServlet {
 
 //        List<User> users = userRepository.findAll();
 //        req.setAttribute("users", users);
-        req.getRequestDispatcher("/views/addUser.jsp").forward(req, resp);
+        req.getRequestDispatcher("/addUser.jsp").forward(req, resp);
     }
 
     @Override

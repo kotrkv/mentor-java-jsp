@@ -21,8 +21,8 @@
                     <td>${user.name}</td>
                     <td>${user.password}</td>
                     <td>${user.birthday}</td>
-                    <td><a href="/delete?name="+${user.name}>Edit</a></td>
-                    <td><a href="">Remove</a></td>
+                    <td><a href="delete?name=${user.name}">Remove</a></td>
+                    <td><a href="delete">Delete</a></td>
                 </tr>
             </c:forEach>
         </table>
