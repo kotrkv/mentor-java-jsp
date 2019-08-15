@@ -27,4 +27,9 @@ public class UsersRepositoryInMemory implements Repository<User> {
     public void delete(User user) {
         FakeRepository.getInstance().getUsers().remove(user);
     }
+
+    @Override
+    public void update(User user) {
+        FakeRepository.getInstance().getUsers().set(1, user);
+    }
 }

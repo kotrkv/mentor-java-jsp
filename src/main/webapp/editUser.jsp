@@ -8,10 +8,10 @@
 	</head>
 	<body>
 		<h3>Add new user...</h3>
-		<form action="/addUser" method="post" class="form-style-9">
+		<form action="/updateUSer" method="post" class="form-style-9">
 		<ul>
 		    <li>
-		        <input type = "text" name = "name" placeholder = "Input name..." class="field-style field-full align-none"/>
+		        <input type = "text" name = "name" value = "${user.name}" class="field-style field-full align-none"/>
 		    </li>
 		    <li>
 		        <input type = "password" name = "password" placeholder = "Input password..." class="field-style field-full align-none"/>
