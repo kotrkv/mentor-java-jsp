@@ -8,16 +8,16 @@
 	</head>
 	<body>
 		<h3>Add new user...</h3>
-		<form action="/updateUSer" method="post" class="form-style-9">
+		<form action="/edit" method="post" class="form-style-9">
 		<ul>
 		    <li>
 		        <input type = "text" name = "name" value = "${user.name}" class="field-style field-full align-none"/>
 		    </li>
 		    <li>
-		        <input type = "password" name = "password" placeholder = "Input password..." class="field-style field-full align-none"/>
+		        <input type = "password" name = "password" value = "${user.password}" class="field-style field-full align-none"/>
 		    </li>
 		    <li>
-		        <input type = "birthday" name = "birthday" placeholder = "Input birthday..." class="field-style field-full align-none"/>
+		        <input type = "birthday" name = "birthday" value = "${user.birthday}" class="field-style field-full align-none"/>
 		    </li>
 		    <li>
 		        <input type = "submit"/>

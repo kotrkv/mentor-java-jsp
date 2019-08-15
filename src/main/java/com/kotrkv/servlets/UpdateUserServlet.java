@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
 
-@WebServlet("edit")
+@WebServlet("/edit")
 public class UpdateUserServlet extends HttpServlet {
 
     private Repository<User> userRepository;
@@ -31,7 +31,7 @@ public class UpdateUserServlet extends HttpServlet {
         LocalDate birthday = LocalDate.parse(req.getParameter("birthday"));
         User user = new User(name, password, birthday);
         req.setAttribute("user", user);
-        req.getRequestDispatcher("updateUser.jsp");
+        req.getRequestDispatcher("editUser.jsp").forward(req, resp);
     }
 
     @Override
@@ -39,7 +39,10 @@ public class UpdateUserServlet extends HttpServlet {
         String name = req.getParameter("name");
         String password = req.getParameter("password");
         LocalDate birthday = LocalDate.parse(req.getParameter("birthday"));
-        userRepository.update(new User(name, password, birthday));
-        resp.sendRedirect("/users");
+        User user = new User(name, password, birthday);
+        userRepository.update(user);
+        req.setAttribute("user", user);
+        req.getRequestDispatcher(getServletContext().getContextPath() + "/info.jsp").forward(req, resp);
+        //resp.sendRedirect("/users");
     }
 }
